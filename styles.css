@@ -1,0 +1,62 @@
+body {
+  font-family: 'Neuton', serif;
+  background: #DEDEDE;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1 {
+  font-size: 5em;
+  /* margin-left: 30px; */
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2.5em;
+  font-weight: lighter;
+  /* margin-left: 30px; */
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0;
+  margin: auto;
+  /* background: maroon; */
+}
+
+.container-sm {
+  margin-left: 30px;
+}
+
+#skillz {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: auto;
+}
+
+#name {
+  display: flex;
+  align-items: center;
+}
+
+#hexagon {
+  height: 40px;
+  -webkit-animation:spin 10s linear infinite;
+  -moz-animation:spin 10s linear infinite;
+  animation:spin 10s linear infinite;
+  transition: 250ms;
+}
+
+#hexagon:hover {
+  height: 45px;
+  color: orange;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
