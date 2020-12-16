@@ -53,6 +53,7 @@ document.getElementById('hexagon').addEventListener("click", () => {
   const handleAnimationOn = () => {
     document.documentElement.style.setProperty('--body-background', '#000000')
     document.documentElement.style.setProperty('--text-color', '#DEDEDE')
+    document.documentElement.style.setProperty('--icon-color', 'invert(100%) sepia(0%) saturate(1234%) hue-rotate(124deg) brightness(113%) contrast(74%)')
     document.getElementById("hexagon").style.filter = "grayscale(0%)";
     
     const textToChange = document.getElementsByClassName('rainbow')
@@ -64,6 +65,7 @@ document.getElementById('hexagon').addEventListener("click", () => {
   const handleAnimationOff = () => {
     document.documentElement.style.setProperty('--body-background', '#DEDEDE')
     document.documentElement.style.setProperty('--text-color', '#000000')
+    document.documentElement.style.setProperty('--icon-color', 'invert(0%) sepia(100%) saturate(7500%) hue-rotate(208deg) brightness(115%) contrast(109%)')
     document.getElementById("hexagon").style.filter = "grayscale(100%)";
 
     const textToChange = document.getElementsByClassName('rainbow')
