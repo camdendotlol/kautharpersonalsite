@@ -53,7 +53,7 @@ document.getElementById('hexagon').addEventListener("click", () => {
   const handleAnimationOn = () => {
     document.documentElement.style.setProperty('--body-background', '#000000')
     document.documentElement.style.setProperty('--text-color', '#DEDEDE')
-    document.getElementById("css-is-stupid").style.boxShadow = "0"
+    document.documentElement.style.setProperty('--navbar-background-mobile', '#2c2c2c')
     document.getElementById("hexagon").style.filter = "grayscale(0%)"
     
     const textToChange = document.getElementsByClassName('rainbow')
@@ -65,11 +65,16 @@ document.getElementById('hexagon').addEventListener("click", () => {
   const handleAnimationOff = () => {
     document.documentElement.style.setProperty('--body-background', '#DEDEDE')
     document.documentElement.style.setProperty('--text-color', '#000000')
+    document.documentElement.style.setProperty('--navbar-background-mobile', '#000000')
     document.getElementById("hexagon").style.filter = "grayscale(100%)";
 
     const textToChange = document.getElementsByClassName('rainbow')
     for(let i=0; i < textToChange.length; i++) {
-      textToChange[i].style.color = '#000000'
+      // if (["film-editor-nav", "graphic-design-nav", "drone-nav"].includes(textToChange[i].id) ) {
+      //   textToChange[i].style.color = '#dedede'
+      // } else {
+        textToChange[i].style.color = '#000000'
+      // }
     }
   }
 

@@ -1,8 +1,9 @@
 :root {
-  --name-transition: ease-in 1s;
+  --name-transition: color ease-in 1s;
   --body-background: #DEDEDE;
   --text-color: #000000;
   --icon-color-mobile: #DEDEDE;
+  --navbar-background-mobile: #000000;
 }
 
 body {
@@ -58,11 +59,6 @@ h3 {
   display: grid;
   grid-template-columns: 100px 100px 100px;
   grid-template-rows: auto;
-}
-
-#name {
-  display: flex;
-  align-items: center;
 }
 
 #hexagon {
@@ -128,16 +124,17 @@ h3 {
     transform: translate(0);
     top: 0px;
     left: 0px;
-    background: var(--text-color);
+    background: var(--navbar-background-mobile);
     width: 100%;
     margin: 0 auto;
-    box-shadow: 1px 2px 3px;
+    /* box-shadow: 1px 2px 3px; */
   }
 
   #css-is-stupid svg {
     height: 32px;
-    color: var(--body-background);
+    color: #DEDEDE;
     padding: 1.2em;
+    transition: color ease-in 1s;
   }
 
   #hexagon {
@@ -153,6 +150,10 @@ h3 {
 }
 
 @media only screen and (max-width: 900px) {
+  #name {
+    font-size: 3.5em;
+  }
+
   .container-sm {
     margin: 5px;
   }
