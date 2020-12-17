@@ -1,8 +1,8 @@
 :root {
   --name-transition: ease-in 1s;
   --body-background: #DEDEDE;
-  --icon-color: invert(0%) sepia(1%) saturate(4%) hue-rotate(279deg) brightness(95%) contrast(101%);
   --text-color: #000000;
+  --icon-color-mobile: #DEDEDE;
 }
 
 body {
@@ -80,21 +80,24 @@ h3 {
   flex-flow: column;
 }
 
-#css-is-stupid img:not(:first-child) {
+#css-is-stupid svg {
   height: 30px;
+  width: 30px;
   padding: 2em;
-  filter: var(--icon-color);
-  transition: filter ease-in 1s;
+  /* filter: var(--icon-color); */
+  transition: fill ease-in 1s;
+  justify-self: center;
 }
 
-#css-is-stupid img:hover {
-  /* transform: scale(1.1); */
-  /* transition: transform 250ms; */
+#css-is-stupid img:hover, #css-is-stupid svg:hover {
+  /* transform: scale(1.1);
+  transition: transform 250ms; */
   cursor: pointer;
 }
 
-footer {
-  font-size-adjust: 0.3;
+.film-deets {
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
 
 @keyframes spin { 100% { transform:rotate(360deg); } }
@@ -104,11 +107,68 @@ footer {
     max-width: 1000px;
     margin-top: 60px;
   }
+
+  .film-deets iframe {
+    width: 520px;
+    height: 100%;
+    margin: 0;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
+  .film-deets iframe {
+    width: 520px;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 1160px) {
+  #css-is-stupid {
+    flex-flow: row;
+    transform: translate(0);
+    top: 0px;
+    left: 0px;
+    background: var(--text-color);
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 1px 2px 3px;
+  }
+
+  #css-is-stupid svg {
+    height: 32px;
+    color: var(--body-background);
+    padding: 1.2em;
+  }
+
+  #hexagon {
+    padding: 1em;
+  }
+
   .container-main {
-    max-width: 600px;
-    margin-top: 20px;
+    border: 0;
+    margin-top: 80px;
+  }
+
+
+}
+
+@media only screen and (max-width: 900px) {
+  .container-sm {
+    margin: 5px;
+  }
+
+  .film-deets {
+    grid-template-columns: 100%;
+    gap: 10px;
+  }
+
+  .film-deets iframe {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .film-deets * {
+    margin: 0;
   }
 }
