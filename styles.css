@@ -1,5 +1,4 @@
 :root {
-  --name-transition: color ease-in 1s;
   --body-background: #DEDEDE;
   --text-color: #000000;
   --icon-color-mobile: #DEDEDE;
@@ -34,7 +33,7 @@ h3 {
 }
 
 .rainbow {
-  transition: var(--name-transition);
+  transition: color ease-in 1s;
 }
 
 #name-box {
@@ -47,12 +46,14 @@ h3 {
   padding: 0;
   margin: auto;
   margin-top: 100px;
+  border-right: 1px solid var(--text-color);
   border-left: 1px solid var(--text-color);
   transition: border-color 1s ease;
 }
 
 .container-sm {
   margin-left: 30px;
+  margin-right: 30px;
 }
 
 #skillz {
@@ -64,7 +65,7 @@ h3 {
 #hexagon {
   padding: 2em;
   height: 40px;
-  animation:spin 10s linear infinite;
+  animation: spin 10s linear infinite;
   filter: grayscale(100%);
   transition: filter ease-in 1s;
 }
@@ -80,14 +81,10 @@ h3 {
   height: 30px;
   width: 30px;
   padding: 2em;
-  /* filter: var(--icon-color); */
-  transition: fill ease-in 1s;
   justify-self: center;
 }
 
 #css-is-stupid img:hover, #css-is-stupid svg:hover {
-  /* transform: scale(1.1);
-  transition: transform 250ms; */
   cursor: pointer;
 }
 
@@ -127,14 +124,12 @@ h3 {
     background: var(--navbar-background-mobile);
     width: 100%;
     margin: 0 auto;
-    /* box-shadow: 1px 2px 3px; */
   }
 
   #css-is-stupid svg {
     height: 32px;
-    color: #DEDEDE;
+    color: var(--body-background);
     padding: 1.2em;
-    transition: color ease-in 1s;
   }
 
   #hexagon {
@@ -145,8 +140,6 @@ h3 {
     border: 0;
     margin-top: 80px;
   }
-
-
 }
 
 @media only screen and (max-width: 900px) {

@@ -35,9 +35,6 @@ const colorAnimation = () => {
       if (!allowAnimation) {
           return null
       }
-
-      document.documentElement.style
-          .setProperty('--name-transition', `color ease-in 1000ms`)
   
       const textToChange = document.getElementsByClassName('rainbow')
 
@@ -46,6 +43,27 @@ const colorAnimation = () => {
       }
   }, 3000)
 }
+
+const isMobile = window.matchMedia('(max-width: 1160px)')
+
+//TODO: Currently there is a bug in which the icons are the wrong color
+//      if the user resizes from HD to phone-size. I would like to add a
+//      media query event listener to fix this, but it's complicated and
+//      poorly supported in some browsers
+
+// const handleWindowResize = e => {
+//   if (e.matches) {
+//     const fen = document.getElementById("film-editor-nav")
+//     // if (allowAnimation) return null
+//     if (fen.style.color === '#DEDEDE') {
+//       fen.style.color = '#000000'
+//     } else if (fen.style.color === '#000000') {
+//       fen.style.color = '#DEDEDE'
+//     }
+//   }
+// }
+
+// isMobile.addListener(handleWindowResize)
 
 document.getElementById('hexagon').addEventListener("click", () => {
   allowAnimation = !allowAnimation
@@ -58,7 +76,11 @@ document.getElementById('hexagon').addEventListener("click", () => {
     
     const textToChange = document.getElementsByClassName('rainbow')
     for(let i=0; i < textToChange.length; i++) {
-      textToChange[i].style.color = '#DEDEDE'
+      if (["film-editor-nav", "graphic-design-nav", "drone-nav"].includes(textToChange[i].id) && isMobile.matches) {
+        textToChange[i].style.color = '#000000'
+      } else {
+        textToChange[i].style.color = '#DEDEDE'
+      }
     }
   }
 
@@ -70,11 +92,11 @@ document.getElementById('hexagon').addEventListener("click", () => {
 
     const textToChange = document.getElementsByClassName('rainbow')
     for(let i=0; i < textToChange.length; i++) {
-      // if (["film-editor-nav", "graphic-design-nav", "drone-nav"].includes(textToChange[i].id) ) {
-      //   textToChange[i].style.color = '#dedede'
-      // } else {
+      if (["film-editor-nav", "graphic-design-nav", "drone-nav"].includes(textToChange[i].id) && isMobile.matches) {
+        textToChange[i].style.color = '#DEDEDE'
+      } else {
         textToChange[i].style.color = '#000000'
-      // }
+      }
     }
   }
 
@@ -83,11 +105,9 @@ document.getElementById('hexagon').addEventListener("click", () => {
     : handleAnimationOff()
 })
 
-const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 // ensures alternate experience with random colors for people with reduced motion headers
-// thanks to https://dev.to/vanaf1979/respecting-prefers-reduced-motion-with-javascript-and-react-42if
-// for the media query technique
+const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
 if (!mediaQuery || mediaQuery.matches) {
   
   document.getElementsByClassName('rainbow').style.color = `#${chooseRandomHexChars()}`
