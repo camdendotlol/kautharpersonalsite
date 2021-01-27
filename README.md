@@ -1,3 +1,3 @@
 # Kauthar's Personal/Professional Website
 
-To be deployed on Neocities eventually.
+To be deployed eventually with GitHub Pages.
