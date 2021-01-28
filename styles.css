@@ -3,6 +3,7 @@
   --text-color: #000000;
   --icon-color-mobile: #DEDEDE;
   --navbar-background-mobile: #000000;
+  --laurel-filter: invert(0);
 }
 
 body {
@@ -41,6 +42,14 @@ h3 {
   flex-flow: row;
 }
 
+.laurel {
+  width: 20px;
+  position: relative;
+  top: 2px;
+  filter: var(--laurel-filter);
+  transition: filter 1s ease-in;
+}
+
 .container-main {
   max-width: 1200px;
   padding: 0;
@@ -75,6 +84,7 @@ h3 {
   position: fixed;
   display: flex;
   flex-flow: column;
+  z-index: 1000;
 }
 
 #css-is-stupid svg {
@@ -128,7 +138,7 @@ h3 {
 
   #css-is-stupid svg {
     height: 32px;
-    color: var(--body-background);
+    color: #DEDEDE;
     padding: 1.2em;
   }
 
@@ -163,6 +173,7 @@ h3 {
   }
 
   .film-deets * {
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 }

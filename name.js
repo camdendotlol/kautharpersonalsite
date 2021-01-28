@@ -28,42 +28,29 @@ const chooseRandomHexChars = () => {
   return color.join('')
 }
 
+const isMobile = window.matchMedia('(max-width: 1160px)')
+
 let allowAnimation = false
 
 const colorAnimation = () => {
   setInterval(() => {
       if (!allowAnimation) {
-          return null
+        return null
       }
   
-      const textToChange = document.getElementsByClassName('rainbow')
+      let textToChange = document.getElementsByClassName('rainbow')
+
+      // disable icon coloring on mobile for now
+      // there seems to be a bug in iOS with SVG animations
+      if (isMobile.matches) {
+        textToChange = document.querySelectorAll('.rainbow:not(.nav-icon)')
+      }
 
       for(let i=0; i < textToChange.length; i++) {
         textToChange[i].style.color = `#${chooseRandomHexChars()}`
       }
   }, 3000)
 }
-
-const isMobile = window.matchMedia('(max-width: 1160px)')
-
-//TODO: Currently there is a bug in which the icons are the wrong color
-//      if the user resizes from HD to phone-size. I would like to add a
-//      media query event listener to fix this, but it's complicated and
-//      poorly supported in some browsers
-
-// const handleWindowResize = e => {
-//   if (e.matches) {
-//     const fen = document.getElementById("film-editor-nav")
-//     // if (allowAnimation) return null
-//     if (fen.style.color === '#DEDEDE') {
-//       fen.style.color = '#000000'
-//     } else if (fen.style.color === '#000000') {
-//       fen.style.color = '#DEDEDE'
-//     }
-//   }
-// }
-
-// isMobile.addListener(handleWindowResize)
 
 document.getElementById('hexagon').addEventListener("click", () => {
   allowAnimation = !allowAnimation
@@ -72,22 +59,27 @@ document.getElementById('hexagon').addEventListener("click", () => {
     document.documentElement.style.setProperty('--body-background', '#000000')
     document.documentElement.style.setProperty('--text-color', '#DEDEDE')
     document.documentElement.style.setProperty('--navbar-background-mobile', '#2c2c2c')
+    document.documentElement.style.setProperty('--laurel-filter', 'invert(100)')
     document.getElementById("hexagon").style.filter = "grayscale(0%)"
     
     const textToChange = document.getElementsByClassName('rainbow')
     for(let i=0; i < textToChange.length; i++) {
       if (["film-editor-nav", "graphic-design-nav", "drone-nav"].includes(textToChange[i].id) && isMobile.matches) {
-        textToChange[i].style.color = '#000000'
+        textToChange[i].style.color = '#DEDEDE'
       } else {
         textToChange[i].style.color = '#DEDEDE'
       }
     }
+
+    const favicon = document.querySelector('[rel=icon]');
+    favicon.href = '/assets/img/surface1.png'
   }
 
   const handleAnimationOff = () => {
     document.documentElement.style.setProperty('--body-background', '#DEDEDE')
     document.documentElement.style.setProperty('--text-color', '#000000')
     document.documentElement.style.setProperty('--navbar-background-mobile', '#000000')
+    document.documentElement.style.setProperty('--laurel-filter', 'invert(0)')
     document.getElementById("hexagon").style.filter = "grayscale(100%)";
 
     const textToChange = document.getElementsByClassName('rainbow')
@@ -98,6 +90,9 @@ document.getElementById('hexagon').addEventListener("click", () => {
         textToChange[i].style.color = '#000000'
       }
     }
+
+    const favicon = document.querySelector('[rel=icon]');
+    favicon.href = '/favicon.png'
   }
 
   allowAnimation
@@ -107,6 +102,7 @@ document.getElementById('hexagon').addEventListener("click", () => {
 
 
 // ensures alternate experience with random colors for people with reduced motion headers
+// TODO: update this section so it works
 const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
 if (!mediaQuery || mediaQuery.matches) {
   
