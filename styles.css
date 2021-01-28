@@ -101,6 +101,7 @@ h3 {
 .film-deets {
   display: grid;
   grid-template-columns: 60% 40%;
+  gap: 10px;
 }
 
 @keyframes spin { 100% { transform:rotate(360deg); } }
