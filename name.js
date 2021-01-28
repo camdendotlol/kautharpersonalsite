@@ -72,7 +72,7 @@ document.getElementById('hexagon').addEventListener("click", () => {
     }
 
     const favicon = document.querySelector('[rel=icon]');
-    favicon.href = '/assets/img/surface1.png'
+    favicon.href = '/assets/img/rainbowhex.png'
   }
 
   const handleAnimationOff = () => {
