@@ -146,6 +146,10 @@ h3 {
     padding: 1em;
   }
 
+  .film-deets iframe {
+    width: 460px;
+  }
+
   .container-main {
     border: 0;
     margin-top: 80px;
