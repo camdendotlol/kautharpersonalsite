@@ -25,11 +25,11 @@ h1 {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 h3 {
-  font-size: 2.5em;
+  font-size: 1.8em;
   font-weight: lighter;
 }
 
@@ -65,10 +65,18 @@ h3 {
   margin-right: 30px;
 }
 
-#skillz {
+.image-box img {
+  max-width: 100%;
+}
+
+.image-grid {
   display: grid;
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: auto;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+}
+
+.image-grid:nth-child(even) h3 {
+  text-align: right;
 }
 
 #hexagon {
@@ -102,6 +110,11 @@ h3 {
   display: grid;
   grid-template-columns: 60% 40%;
   gap: 10px;
+}
+
+#footer {
+  margin-top: 100px;
+  text-align: center;
 }
 
 @keyframes spin { 100% { transform:rotate(360deg); } }
