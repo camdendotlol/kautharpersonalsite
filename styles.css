@@ -67,12 +67,16 @@ h3 {
 
 .image-box img {
   max-width: 100%;
+  margin: 0;
 }
 
 .image-grid {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 48% 48%;
   gap: 10px;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
 }
 
 .image-grid:nth-child(even) h3 {
