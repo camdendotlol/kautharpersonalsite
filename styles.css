@@ -35,11 +35,13 @@ h3 {
 
 .rainbow {
   transition: color ease-in 1s;
+  margin-bottom: 0;
 }
 
-#name-box {
-  display: flex;
-  flex-flow: row;
+#resume-link {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-left: 10px;
 }
 
 .laurel {
@@ -171,10 +173,6 @@ h3 {
     border: 0;
     margin-top: 80px;
   }
-
-  .image-grid h3 {
-    font-size: 1.1em;
-  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -200,6 +198,10 @@ h3 {
   .film-deets * {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .image-grid h3 {
+    font-size: 1.1em;
   }
 }
 
