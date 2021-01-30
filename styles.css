@@ -44,6 +44,10 @@ h3 {
   margin-left: 10px;
 }
 
+#kauthar-pic {
+  width: 160px;
+}
+
 .laurel {
   width: 20px;
   position: relative;
@@ -78,6 +82,10 @@ h3 {
   margin: 0;
   padding: 0;
   max-width: 100%;
+}
+
+.image-grid h3 {
+  align-self: center;
 }
 
 .image-grid:nth-child(even) h3 {
@@ -202,6 +210,19 @@ h3 {
 
   .image-grid h3 {
     font-size: 1.1em;
+  }
+
+  #resume-link {
+    text-align: center;
+  }
+
+  #name {
+    text-align: center;
+  }
+
+  #kauthar-pic {
+    margin: 0 auto;
+    display: block;
   }
 }
 
