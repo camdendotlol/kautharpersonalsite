@@ -49,10 +49,10 @@ const colorAnimation = () => {
       for(let i=0; i < textToChange.length; i++) {
         textToChange[i].style.color = `#${chooseRandomHexChars()}`
       }
-  }, 3000)
+  }, 5000)
 }
 
-document.getElementById('hexagon').addEventListener("click", () => {
+const handleAnimation = () => {
   allowAnimation = !allowAnimation
 
   const handleAnimationOn = () => {
@@ -98,7 +98,7 @@ document.getElementById('hexagon').addEventListener("click", () => {
   allowAnimation
     ? handleAnimationOn()
     : handleAnimationOff()
-})
+}
 
 const filmNav = document.getElementById('film-editor-nav-link')
 const graphicNav = document.getElementById('graphic-design-nav-link')
@@ -112,10 +112,8 @@ droneNav.addEventListener('click', () => document.getElementById('drone-pilot').
 // TODO: update this section so it works
 const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
 if (!mediaQuery || mediaQuery.matches) {
-  
-  document.getElementsByClassName('rainbow').style.color = `#${chooseRandomHexChars()}`
-
   allowAnimation === false
 } else {
+  document.getElementById('hexagon').addEventListener("click", handleAnimation)
   colorAnimation()
 } 

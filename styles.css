@@ -202,3 +202,9 @@ h3 {
     margin-right: 0;
   }
 }
+
+@media only screen and (prefers-reduced-motion: reduce) {
+  #hexagon {
+    animation: none;
+  }
+}
