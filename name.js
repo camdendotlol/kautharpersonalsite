@@ -100,6 +100,13 @@ document.getElementById('hexagon').addEventListener("click", () => {
     : handleAnimationOff()
 })
 
+const filmNav = document.getElementById('film-editor-nav-link')
+const graphicNav = document.getElementById('graphic-design-nav-link')
+const droneNav = document.getElementById('drone-nav-link')
+
+filmNav.addEventListener('click', () => document.getElementById('film-editor').scrollIntoView({ behavior: "smooth" }))
+graphicNav.addEventListener('click', () => document.getElementById('graphic-designer').scrollIntoView({ behavior: "smooth" }))
+droneNav.addEventListener('click', () => document.getElementById('drone-pilot').scrollIntoView({ behavior: "smooth" }))
 
 // ensures alternate experience with random colors for people with reduced motion headers
 // TODO: update this section so it works
