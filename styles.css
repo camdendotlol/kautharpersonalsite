@@ -92,6 +92,19 @@ h3 {
   text-align: right;
 }
 
+#graphic-design-view {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+#graphic-design-view img {
+  max-width: 100%;
+  max-height: 400px;
+  justify-self: center;
+}
+
 #hexagon {
   padding: 2em;
   height: 40px;
@@ -214,6 +227,7 @@ h3 {
 
   #resume-link {
     text-align: center;
+    margin-left: 0;
   }
 
   #name {
@@ -223,6 +237,13 @@ h3 {
   #kauthar-pic {
     margin: 0 auto;
     display: block;
+  }
+
+  #graphic-design-view img {
+    align-self: center;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
   }
 }
 
