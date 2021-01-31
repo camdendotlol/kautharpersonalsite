@@ -19,6 +19,9 @@ const droneNav = document.getElementById('drone-nav-link')
 const checkMobile = () => {
   console.log('mobile changed')
 
+  // TODO: set it up so it waits for the graphic design pics to
+  // to load before getting the drone nav location
+
   // find locations of each item
   const filmNavLoc = document.getElementById('film-editor').offsetTop
   const graphicNavLoc = document.getElementById('graphic-designer').offsetTop

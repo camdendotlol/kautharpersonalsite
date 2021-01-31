@@ -84,11 +84,11 @@ h3 {
   max-width: 100%;
 }
 
-.image-grid h3 {
+.image-grid h3, .image-grid p {
   align-self: center;
 }
 
-.image-grid:nth-child(even) h3 {
+.image-grid:nth-child(even) h3, .image-grid:nth-child(even) p {
   text-align: right;
 }
 
