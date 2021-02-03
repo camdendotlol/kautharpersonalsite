@@ -45,7 +45,14 @@ h3 {
 }
 
 #kauthar-pic {
-  width: 160px;
+  width: 220px;
+  position: absolute;
+  right: 27%;
+  top: 130px;
+}
+
+#film-editor {
+  margin-top: 120px;
 }
 
 .laurel {
@@ -156,6 +163,10 @@ h3 {
     height: 300px;
     margin: 0;
   }
+
+  #kauthar-pic {
+    right: 24%;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -174,6 +185,10 @@ h3 {
     background: var(--navbar-background-mobile);
     width: 100%;
     margin: 0 auto;
+  }
+
+  #kauthar-pic {
+    right: 15%;
   }
 
   #css-is-stupid svg {
@@ -237,6 +252,12 @@ h3 {
   #kauthar-pic {
     margin: 0 auto;
     display: block;
+    width: 160px;
+    position: initial;
+  }
+
+  #film-editor {
+    margin-top: 10px;
   }
 
   #graphic-design-view img {
