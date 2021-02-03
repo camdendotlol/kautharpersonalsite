@@ -103,7 +103,6 @@ const handleAnimation = () => {
     document.getElementById("hexagon").style.filter = "grayscale(0%)"
     
     const textToChange = document.getElementsByClassName('rainbow')
-    // TODO: can maybe remove this loop with some CSS changes
     for(let i=0; i < textToChange.length; i++) {
         textToChange[i].style.color = 'var(--text-color)'
       }
