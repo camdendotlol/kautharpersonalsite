@@ -1,42 +1,42 @@
 const mobileQuery = window.matchMedia('(max-width: 1160px)')
 
-const navScroll = (elementLoc, isMobile) => {
-  console.log('scroll fired')
-  if (isMobile) {
-    return window.scrollTo({ top: (elementLoc - 65), behavior: 'smooth' })
-  } else {
-    return window.scrollTo({ top: elementLoc, behavior: 'smooth' })
-  }
-}
-
-const navScrollMobile = navScroll
-
 // set up for scrolling between sections
 const filmNav = document.getElementById('film-editor-nav-link')
 const graphicNav = document.getElementById('graphic-design-nav-link')
 const droneNav = document.getElementById('drone-nav-link')
 
+const filmSVG = document.getElementById('film-editor-nav')
+const graphicSVG = document.getElementById('graphic-design-nav')
+const droneSVG = document.getElementById('drone-nav')
+
+const filmSection = document.getElementById('film-editor')
+const graphicSection = document.getElementById('graphic-designer')
+const droneSection = document.getElementById('drone-pilot')
+
+// Special workaround because iOS Safari doesn't support the scroll-margin-top CSS property.
+// Support has been merged into WebKit, but the workaround should probably stay for the
+// long-term due to old iOS devices still in use.
+if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+  filmNav.addEventListener('click', () => {
+    filmSection.scrollIntoView({ behavior: 'smooth' })
+    window.scrollBy(0, -65)
+  })
+  graphicNav.addEventListener('click', () => {
+    graphicSection.scrollIntoView({ behavior: 'smooth' })
+    window.scrollBy(0, -65)
+  })
+  droneNav.addEventListener('click', () => {
+    droneSection.scrollIntoView({ behavior: 'smooth' })
+    window.scrollBy(0, -65)
+  })
+} else {
+  filmNav.addEventListener('click', () => filmSection.scrollIntoView({ behavior: 'smooth' }))
+  graphicNav.addEventListener('click', () => graphicSection.scrollIntoView({ behavior: 'smooth' }))
+  droneNav.addEventListener('click', () => droneSection.scrollIntoView({ behavior: 'smooth' }))
+}
+
 const checkMobile = () => {
-  console.log('mobile changed')
-
-  // TODO: set it up so it waits for the graphic design pics to
-  // to load before getting the drone nav location
-
-  // find locations of each item
-  const filmNavLoc = document.getElementById('film-editor').offsetTop
-  const graphicNavLoc = document.getElementById('graphic-designer').offsetTop
-  const droneNavLoc = document.getElementById('drone-pilot').offsetTop
-
-  // set variables for the nav icons
-  const filmSVG = document.getElementById('film-editor-nav')
-  const graphicSVG = document.getElementById('graphic-design-nav')
-  const droneSVG = document.getElementById('drone-nav')
   if (mobileQuery.matches) {
-    // add scrolling offset
-    filmNav.addEventListener('click', () => navScroll(filmNavLoc, true))
-    graphicNav.addEventListener('click', () => navScroll(graphicNavLoc, true))
-    droneNav.addEventListener('click', () => navScroll(droneNavLoc, true))
-
     // remove rainbow class from SVG icons due to iOS bug
     filmSVG.classList.remove('rainbow')
     graphicSVG.classList.remove('rainbow')
@@ -47,25 +47,6 @@ const checkMobile = () => {
     graphicSVG.style.setProperty('color', '#DEDEDE')
     droneSVG.style.setProperty('color', '#DEDEDE')
   } else {
-    ////////////////////////////////////////////////////////////////////////////////////
-    // The event listener below is not removed when the mobile state changes.
-    // This has been a huge annoyance because there's no way to handle the scroll
-    // function without using an anonymous function, but you cannot remove the
-    // event handler when it's an anonymous function. So if you resize the window
-    // over and over, it will call previous event handlers many times simultaneously.
-    // However, scrolling behaves as expected and this issue does not seem to have
-    // any noticeable performance impact in real-world usage, so for now:
-    //                      _               _                         _    __ _      
-    //   _ __ ___  ___  ___ | |_   _____  __| |_  __      _____  _ __ | |_ / _(_)_  __
-    //  | '__/ _ \/ __|/ _ \| \ \ / / _ \/ _` (_) \ \ /\ / / _ \| '_ \| __| |_| \ \/ /
-    //  | | |  __/\__ \ (_) | |\ V /  __/ (_| |_   \ V  V / (_) | | | | |_|  _| |>  < 
-    //  |_|  \___||___/\___/|_| \_/ \___|\__,_(_)   \_/\_/ \___/|_| |_|\__|_| |_/_/\_\
-    //
-    ////////////////////////////////////////////////////////////////////////////////////
-    filmNav.addEventListener('click', () => navScroll(filmNavLoc, false))
-    graphicNav.addEventListener('click', () => navScroll(graphicNavLoc, false))
-    droneNav.addEventListener('click', () => navScroll(droneNavLoc, false))
-
     // add rainbow class to SVG icons
     filmSVG.classList.add('rainbow')
     graphicSVG.classList.add('rainbow')

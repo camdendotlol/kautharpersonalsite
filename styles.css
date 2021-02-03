@@ -187,6 +187,10 @@ h3 {
     margin: 0 auto;
   }
 
+  #film-editor, #graphic-designer, #drone-pilot {
+    scroll-margin-top: 65px;
+  }
+
   #kauthar-pic {
     right: 15%;
   }
