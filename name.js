@@ -16,7 +16,11 @@ const droneSection = document.getElementById('drone-pilot')
 // Special workaround because Safari doesn't support the scroll-margin-top CSS property.
 // Support has been merged into WebKit, but the workaround should probably stay for the
 // long-term due to old iOS and Mac devices still in use.
-if (navigator.userAgent.match(/AppleWebKit/i) && mobileQuery.matches) {
+
+const appleDevices = ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod']
+
+if ((appleDevices.includes(navigator.platform) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) && mobileQuery.matches) {
+  alert('ay')
   filmNav.addEventListener('click', () => {
     filmSection.scrollIntoView({ behavior: 'smooth' })
     window.scrollBy(0, -65)
