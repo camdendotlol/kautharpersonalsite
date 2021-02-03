@@ -20,7 +20,6 @@ const droneSection = document.getElementById('drone-pilot')
 const appleDevices = ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod']
 
 if ((appleDevices.includes(navigator.platform) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) && mobileQuery.matches) {
-  alert('ay')
   filmNav.addEventListener('click', () => {
     filmSection.scrollIntoView({ behavior: 'smooth' })
     window.scrollBy(0, -65)
