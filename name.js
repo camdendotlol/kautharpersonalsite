@@ -1,10 +1,12 @@
 const mobileQuery = window.matchMedia('(max-width: 1160px)')
 
 // set up for scrolling between sections
+const topNav = document.getElementById('top-nav-link')
 const filmNav = document.getElementById('film-editor-nav-link')
 const graphicNav = document.getElementById('graphic-design-nav-link')
 const droneNav = document.getElementById('drone-nav-link')
 
+const topSVG = document.getElementById('top-nav')
 const filmSVG = document.getElementById('film-editor-nav')
 const graphicSVG = document.getElementById('graphic-design-nav')
 const droneSVG = document.getElementById('drone-nav')
@@ -20,6 +22,9 @@ const droneSection = document.getElementById('drone-pilot')
 const appleDevices = ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod']
 
 if ((appleDevices.includes(navigator.platform) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) && mobileQuery.matches) {
+  topNav.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+  })
   filmNav.addEventListener('click', () => {
     filmSection.scrollIntoView({ behavior: 'smooth' })
     window.scrollBy(0, -65)
@@ -33,6 +38,7 @@ if ((appleDevices.includes(navigator.platform) || (navigator.userAgent.includes(
     window.scrollBy(0, -65)
   })
 } else {
+  topNav.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
   filmNav.addEventListener('click', () => filmSection.scrollIntoView({ behavior: 'smooth' }))
   graphicNav.addEventListener('click', () => graphicSection.scrollIntoView({ behavior: 'smooth' }))
   droneNav.addEventListener('click', () => droneSection.scrollIntoView({ behavior: 'smooth' }))
@@ -41,22 +47,26 @@ if ((appleDevices.includes(navigator.platform) || (navigator.userAgent.includes(
 const checkMobile = () => {
   if (mobileQuery.matches) {
     // remove rainbow class from SVG icons due to iOS bug
+    topSVG.classList.remove('rainbow')
     filmSVG.classList.remove('rainbow')
     graphicSVG.classList.remove('rainbow')
     droneSVG.classList.remove('rainbow')
 
     // reset colors to avoid getting stuck in rainbow
+    topSVG.style.setProperty('color', '#DEDEDE')
     filmSVG.style.setProperty('color', '#DEDEDE')
     graphicSVG.style.setProperty('color', '#DEDEDE')
     droneSVG.style.setProperty('color', '#DEDEDE')
   } else {
     // add rainbow class to SVG icons
+    topSVG.classList.add('rainbow')
     filmSVG.classList.add('rainbow')
     graphicSVG.classList.add('rainbow')
     droneSVG.classList.add('rainbow')
 
     // change icons to black to match white background
     if (!allowAnimation) {
+      topSVG.style.setProperty('color', '#000000')
       filmSVG.style.setProperty('color', '#000000')
       graphicSVG.style.setProperty('color', '#000000')
       droneSVG.style.setProperty('color', '#000000')

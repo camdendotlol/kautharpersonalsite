@@ -33,21 +33,27 @@
   <div class="container-main">
     <div class="container-sm">
       <div id="css-is-stupid">
-        <img id="hexagon" alt="toggle dark mode" src="assets/img/rainbowhex.png">
-        <a id="film-editor-nav-link">
-          <svg id="film-editor-nav" class="rainbow nav-icon" alt="graphic designer" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16">
+        <!-- We have to embed the SVGs directly in the HTML because imported SVGs can't be manipulated by most CSS properties -->
+        <img id="hexagon" aria-label="toggle dark mode" alt="" src="assets/img/rainbowhex.png">
+        <a id="top-nav-link" aria-label="jump to top">
+          <svg id="top-nav" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+          </svg>
+        </a>
+        <a id="film-editor-nav-link" aria-label="jump to film editor section">
+          <svg id="film-editor-nav" class="rainbow nav-icon" alt="" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M0 8a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8z"/>
             <circle cx="3" cy="3" r="3"/>
             <circle cx="9" cy="3" r="3"/>
           </svg>
         </a>
-        <a id="graphic-design-nav-link">
-          <svg id="graphic-design-nav" class="rainbow nav-icon" alt="graphic designer" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
+        <a id="graphic-design-nav-link" aria-label="jump to graphic design section">
+          <svg id="graphic-design-nav" class="rainbow nav-icon" alt="" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
           </svg>
         </a>
-        <a id="drone-nav-link">
-          <svg id="drone-nav" class="rainbow nav-icon" alt="drone pilot" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-joystick" viewBox="0 0 16 16">
+        <a id="drone-nav-link" aria-label="jump to drone pilot section">
+          <svg id="drone-nav" class="rainbow nav-icon" alt="" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-joystick" viewBox="0 0 16 16">
             <path d="M7.106 15.553L.553 12.276A1 1 0 0 1 0 11.382V9.471a1 1 0 0 1 .606-.89L6 6.269v1.088L1 9.5l5.658 2.83a3 3 0 0 0 2.684 0L15 9.5l-5-2.143V6.27l5.394 2.312a1 1 0 0 1 .606.89v1.911a1 1 0 0 1-.553.894l-6.553 3.277a2 2 0 0 1-1.788 0z"/>
             <path fill-rule="evenodd" d="M7.5 9.5v-6h1v6h-1z"/>
             <path d="M10 9.75c0 .414-.895.75-2 .75s-2-.336-2-.75S6.895 9 8 9s2 .336 2 .75zM10 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
@@ -58,9 +64,10 @@
         Kauthar is...
       </h1>
       <p id="resume-link">[&ThickSpace;<a href="/resume.pdf">resum&eacute;</a>&ThickSpace;]</p>
-      <img id="kauthar-pic" alt="edited kauthar selfie" src="assets/img/kauthar.png" />
+      <img id="kauthar-pic" alt="selfie of kauthar" src="assets/img/kauthar.png" />
       <h2 id="film-editor">a <span class="rainbow">videographer</span> and <span class="rainbow">editor</span></h2>
       <div>
+        <!-- These iframes are pasted directly from Vimeo's share modal, avoid editing too much -->
         <h4>SHOWREEL (2021)</h4>
         <div class="film-deets">
           <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/507602518?byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
@@ -82,11 +89,11 @@
             <p>This was my senior project at UCT. My role was editor.</p>
             <p>In 1994, Archbishop Desmond Tutu described South Africa as a "rainbow nation." What does it mean to be a rainbow nation? We sought to explore this question in ANTHEM (2019) as well as the concept of nationhood in general. The film features one South African for each verse of the national anthem as each person approaches their own individuality through the words of the song.</p>
             <p>
-              <img class="laurel" alt="laurel" src='/assets/img/laurel.svg' />
+              <img class="laurel" alt="" src='/assets/img/laurel.svg' />
               South African Film and Television Awards 14 - Best Student Film Nominee
             </p>
             <p>
-              <img class="laurel" alt="laurel" src='/assets/img/laurel.svg' />
+              <img class="laurel" alt="" src='/assets/img/laurel.svg' />
               University of Cape Town Screen Production Graduate Film 2019
             </p>
           </div>
@@ -97,35 +104,29 @@
           <div>
             <p>QUEER (2019) is divided into five segments, each featuring one self-indentifying LGBTQ+ youth. We gave each of the subjects full creative control of their segments - from direction to production. The result is a film that exemplifies the diversity and individuality of the LGBTQ+ community.</p>
             <p>
-              <img class="laurel" alt="laurel" src='/assets/img/laurel.svg' />
+              <img class="laurel" alt="" src='/assets/img/laurel.svg' />
               Screened at Shnit International Short Film Festival 2019.
             </p>
           </div>
         </div>
       </div>
       <h2 id="graphic-designer">a graphic <span class="rainbow">designer</span></h2>
-      <div id="graphic-design-view">
+      <div class="featured-image-view">
         <img alt="portfolio image 1" src="assets/img/3.jpg" />
         <img alt="portfolio image 2" src="assets/img/1.jpg" />
         <img alt="portfolio image 3" src="assets/img/nonselfie.jpg" />
         <img alt="portfolio image 4" src="assets/img/culture jam.jpg" />
       </div>
       <h2 id="drone-pilot">a drone <span class="rainbow">operator</span></h2>
-      <div class="image-box">
-          <div class="image-grid">
-            <img alt="drone flying over mountains" src="assets/img/asoggetti-rSFxBGpnluw-unsplash.jpg" />
-            <div>
-              <h3>RPAS (Remote Pilot Aircraft System) VLOS (Visual Line of Sight) remote pilot licence.</h3>
-              <p>Image source: asoggetti on Unsplash</p>
-            </div>
-          </div>
-          <div class="image-grid">
-            <div>
-              <h3>Licenced for radio communications.</h3>
-              <p>Image source: Aaron Burden on Unsplash</p>
-            </div>
-            <img alt="drone flying over ocean" src="assets/img/aaron-burden-0fA3gVTGwjQ-unsplash.jpg" />
-          </div>
+      <div class="featured-image-view">
+        <div class="drone-image">
+          <p class="drone-image-caption">RPAS (Remote Pilot Aircraft System) VLOS (Visual Line of Sight) remote pilot licence.</p>
+          <p class="image-source">Image source: asoggetti on Unsplash</p>
+        </div>
+        <div class="drone-image">
+          <p class="drone-image-caption">Licenced for radio communications.</p>
+          <p class="image-source">Image source: Aaron Burden on Unsplash</p>
+        </div>
       </div>
       <p id="footer">made in Kentucky by <a href="https://camdenmecklem.com">Camden Mecklem</a></p>
       </div>

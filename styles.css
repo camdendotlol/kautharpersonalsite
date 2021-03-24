@@ -82,6 +82,7 @@ h3 {
   max-width: 100%;
 }
 
+/* TODO: The image-grid class seems to be unused, look into removing. */
 .image-grid {
   display: grid;
   grid-template-columns: 48% 48%;
@@ -99,14 +100,50 @@ h3 {
   text-align: right;
 }
 
-#graphic-design-view {
+.drone-image {
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-size: cover;
+  height: 30rem;
+  width: 30rem;
+  position: relative;
+}
+
+.drone-image:nth-child(1) {
+  background-image: url(/assets/img/asoggetti-rSFxBGpnluw-unsplash.jpg);
+}
+
+.drone-image:nth-child(2) {
+  background-image: url(/assets/img/aaron-burden-0fA3gVTGwjQ-unsplash.jpg);
+}
+
+.drone-image p {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 10px;
+  position: absolute;
+}
+
+.drone-image-caption {
+  font-size: 2em;
+}
+
+.image-source {
+  font-size: 0.8em;
+  bottom: 0%;
+  right: 0%;
+}
+
+.featured-image-view {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
 }
 
-#graphic-design-view img {
+.featured-image-view img {
   max-width: 100%;
   max-height: 400px;
   justify-self: center;
@@ -132,7 +169,7 @@ h3 {
   height: 30px;
   width: 30px;
   padding: 2em;
-  justify-self: center;
+  overflow: visible;
 }
 
 #css-is-stupid img:hover, #css-is-stupid svg:hover {
@@ -166,6 +203,10 @@ h3 {
 
   #kauthar-pic {
     right: 24%;
+  }
+
+  .featured-image-view {
+    justify-content: space-around;
   }
 }
 
@@ -212,6 +253,12 @@ h3 {
   .container-main {
     border: 0;
     margin-top: 80px;
+  }
+
+  .drone-image {
+    height: 24rem;
+    width: 24rem;
+    margin-bottom: 16px;
   }
 }
 
@@ -264,11 +311,18 @@ h3 {
     margin-top: 10px;
   }
 
-  #graphic-design-view img {
+  .featured-image-view img {
     align-self: center;
     margin: 0 auto;
     display: block;
     margin-bottom: 20px;
+  }
+}
+
+/* If the screen is super tiny, hide the top arrow button to save space. */
+@media only screen and (max-width: 370px) {
+  #top-nav-link {
+    display: none;
   }
 }
 
