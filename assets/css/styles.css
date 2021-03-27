@@ -6,6 +6,11 @@
   --laurel-filter: invert(0);
 }
 
+@font-face {
+  font-family: Neuton;
+  src: url(/assets/fonts/Neuton-Regular.ttf)
+}
+
 body {
   font-family: 'Neuton', serif;
   background: var(--body-background);
