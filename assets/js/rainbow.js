@@ -137,7 +137,7 @@ const handleAnimation = () => {
     }
 
     const favicon = document.querySelector('[rel=icon]');
-    favicon.href = '/assets/favicon.png'
+    favicon.href = '/favicon.png'
   }
 
   allowAnimation
