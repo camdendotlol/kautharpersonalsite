@@ -88,24 +88,6 @@ h3 {
   max-width: 100%;
 }
 
-/* TODO: The image-grid class seems to be unused, look into removing. */
-.image-grid {
-  display: grid;
-  grid-template-columns: 48% 48%;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-}
-
-.image-grid h3, .image-grid p {
-  align-self: center;
-}
-
-.image-grid:nth-child(even) h3, .image-grid:nth-child(even) p {
-  text-align: right;
-}
-
 .drone-image {
   background-position: center center;
   background-repeat:  no-repeat;
@@ -153,6 +135,7 @@ h3 {
   max-width: 100%;
   max-height: 400px;
   justify-self: center;
+  margin-top: 20px;
 }
 
 #hexagon {
@@ -186,6 +169,12 @@ h3 {
   display: grid;
   grid-template-columns: 60% 40%;
   gap: 10px;
+}
+
+/* Utility class for nice trendy rounded corners */
+.rounded-corners {
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 #footer {
@@ -291,10 +280,6 @@ h3 {
   .film-deets * {
     margin-left: 0;
     margin-right: 0;
-  }
-
-  .image-grid h3 {
-    font-size: 1.1em;
   }
 
   #resume-link {
