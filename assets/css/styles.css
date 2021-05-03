@@ -88,36 +88,6 @@ h3 {
   max-width: 100%;
 }
 
-.drone-image {
-  background-position: center center;
-  background-repeat:  no-repeat;
-  background-size: cover;
-  height: 30rem;
-  width: 30rem;
-  position: relative;
-}
-
-.drone-image:nth-child(1) {
-  background-image: url(/assets/img/asoggetti-rSFxBGpnluw-unsplash.webp);
-}
-
-.drone-image:nth-child(2) {
-  background-image: url(/assets/img/aaron-burden-0fA3gVTGwjQ-unsplash.webp);
-}
-
-.drone-image p {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  margin-right: 10px;
-  margin-left: 10px;
-  padding: 10px;
-  position: absolute;
-}
-
-.drone-image-caption {
-  font-size: 2em;
-}
-
 .image-source {
   font-size: 0.8em;
   bottom: 0%;
@@ -223,7 +193,7 @@ h3 {
     margin: 0 auto;
   }
 
-  #film-editor, #graphic-designer, #drone-pilot {
+  #film-editor, #graphic-designer {
     scroll-margin-top: 65px;
   }
 
@@ -248,12 +218,6 @@ h3 {
   .container-main {
     border: 0;
     margin-top: 80px;
-  }
-
-  .drone-image {
-    height: 24rem;
-    width: 24rem;
-    margin-bottom: 16px;
   }
 }
 
@@ -307,13 +271,6 @@ h3 {
     margin: 0 auto;
     display: block;
     margin-bottom: 20px;
-  }
-}
-
-/* If the screen is super tiny, hide the top arrow button to save space. */
-@media only screen and (max-width: 370px) {
-  #top-nav-link {
-    display: none;
   }
 }
 
