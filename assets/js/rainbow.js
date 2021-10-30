@@ -79,18 +79,46 @@ const chooseRandomHexChars = () => {
   return color.join('')
 }
 
-const colorAnimation = () => {
-  setInterval(() => {
-      if (!allowAnimation) {
-        return null
-      }
-  
-      const textToChange = document.getElementsByClassName('rainbow')
+const runWithRandomInterval = (callback, multiplicator, lowerLimit = null) => {
+  let randomTimeout = Math.floor(Math.random() * multiplicator)
 
-      for(let i=0; i < textToChange.length; i++) {
-        textToChange[i].style.color = `#${chooseRandomHexChars()}`
-      }
-  }, 5000)
+  // Avoid being too janky with rapid changes.
+  if (lowerLimit && randomTimeout < lowerLimit) {
+    randomTimeout = lowerLimit
+  }
+
+  setTimeout(() => {
+    callback()
+    runWithRandomInterval(callback, multiplicator, lowerLimit)
+  }, randomTimeout)
+}
+
+const changeElementColor = (element) => {
+  if (!allowAnimation) {
+    return null
+  }
+
+  element.style.color = `#${chooseRandomHexChars()}`
+}
+
+const setRandomFilter = (element) => {
+  if (!allowAnimation) {
+    return null
+  }
+
+  const value = Math.floor(Math.random() * 359)
+  element.style.filter = `hue-rotate(${value}deg)`
+}
+
+const initColorChanging = () => {
+  const textToChange = document.getElementsByClassName('rainbow')
+
+  for (let i=0; i < textToChange.length; i++) {
+    runWithRandomInterval(() => changeElementColor(textToChange[i]), 8000, 2000)
+  }
+
+  const kautharPic = document.getElementById('kauthar-pic')
+  runWithRandomInterval(() => setRandomFilter(kautharPic), 8000, 4000)
 }
 
 const handleAnimation = () => {
@@ -139,7 +167,7 @@ if (!a11yQuery || a11yQuery.matches) {
   allowAnimation === false
 } else {
   document.getElementById('hexagon').addEventListener("click", handleAnimation)
-  colorAnimation()
+  initColorChanging()
 }
 
 checkMobile() // initial run on page load

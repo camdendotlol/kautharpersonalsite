@@ -40,7 +40,7 @@ h3 {
 }
 
 .rainbow {
-  transition: color ease-in 1s;
+  transition: color ease-in 0.8s;
   margin-bottom: 0;
 }
 
@@ -55,6 +55,7 @@ h3 {
   position: absolute;
   right: 27%;
   top: 130px;
+  transition: filter 1s;
 }
 
 #film-editor {
