@@ -120,8 +120,7 @@ h3 {
   max-height: 100px;
   justify-self: start;
   margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  transform: scale(0.5);
 }
 
 #hexagon {
