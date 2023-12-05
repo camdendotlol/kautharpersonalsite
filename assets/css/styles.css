@@ -104,7 +104,7 @@ h3 {
 
 .featured-image-view img {
   max-width: 100%;
-  max-height: 200px;
+  max-height: 400px;
   justify-self: center;
   margin-top: 20px;
 }
@@ -117,9 +117,11 @@ h3 {
 
 .featured-image-view2 img {
   max-width: 50%;
-  max-height: 400px;
-  justify-self: center;
+  max-height: 100px;
+  justify-self: start;
   margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #hexagon {
