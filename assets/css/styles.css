@@ -116,7 +116,7 @@ h3 {
 }
 
 .featured-image-view2 img {
-  max-width: 100%;
+  max-width: 50%;
   max-height: 400px;
   justify-self: center;
   margin-top: 20px;
