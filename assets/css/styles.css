@@ -55,7 +55,7 @@ h3 {
 }
 
 #kauthar-pic {
-  width: 20%;
+  width: 100px;
   margin: auto;
   display: block;
   transition: filter 1s;
