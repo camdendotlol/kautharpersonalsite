@@ -303,6 +303,8 @@ h3 {
 /* Make the images invisible by default */
 .Containers {
   display: none;
+  position: relative;
+  margin: auto;
 }
 
 /* forward & Back buttons */
