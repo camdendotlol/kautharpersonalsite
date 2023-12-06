@@ -56,7 +56,6 @@ h3 {
 
 #kauthar-pic {
   width: 220px;
-  position: static;
   display: flex;
   justify-content: center;
   transition: filter 1s;
