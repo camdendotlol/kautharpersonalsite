@@ -7,13 +7,13 @@
 }
 
 @font-face {
-  font-family: Neuton;
-  src: url(/assets/fonts/Neuton-Regular.ttf);
+  font-family: Montserrat;
+  src: url(/assets/fonts/Montserrat.ttf);
   font-display: fallback;
 }
 
 body {
-  font-family: 'Neuton', serif;
+  font-family: 'Montserrat', sans-serif;
   background: var(--body-background);
   box-sizing: border-box;
   margin: 0;
