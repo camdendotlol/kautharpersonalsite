@@ -52,9 +52,7 @@ h3 {
 
 #kauthar-pic {
   width: 220px;
-  position: absolute;
-  right: 27%;
-  top: 130px;
+  position: static;
   transition: filter 1s;
 }
 
