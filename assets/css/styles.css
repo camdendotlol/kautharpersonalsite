@@ -55,9 +55,9 @@ h3 {
 }
 
 #kauthar-pic {
-  width: 220px;
-  display: flex;
-  justify-content: center;
+  width: 60%;
+  margin: auto;
+  display: block;
   transition: filter 1s;
 }
 
