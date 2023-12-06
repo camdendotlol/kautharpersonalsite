@@ -296,9 +296,7 @@ h3 {
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
-  position: static;
-  margin-top: 60px:
-  padding-top: 17px;
+  position: relative;
   margin: auto;
 }
 
@@ -313,7 +311,7 @@ h3 {
   position: absolute;
   top: 48%;
   width: auto;
-  margin-top: 20px;
+  margin-top: -23px;
   padding: 17px;
   color: grey;
   font-weight: bold;
